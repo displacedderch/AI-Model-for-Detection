@@ -40,3 +40,33 @@
   "remediation_steps": "1. Block the CI/CD pipeline or deployment engine from applying this manifest to production. \n2. Modify 'securityContext' properties to pass 'privileged: false' and restrict root access using non-root user UID blocks. \n3. Re-run compliance verification hooks before redeployment.",
   "summary": "Severe compliance drift detected in a deployment manifest. Running a production web-facing container with root-level, fully privileged system capabilities exposes the underlying host kernel to total takeover in the event of an application exploit."
 }
+
+{
+  "category": "semantic_exploit",
+  "threat_detected": true,
+  "severity": "HIGH",
+  "confidence_score": 0.92,
+  "findings": [
+    "Detected a multi-stage semantic request logic sequence bypassing standard input validation strings.",
+    "User session manipulated parameters across distinct steps, altering 'item_quantity' to a negative integer (-2) while keeping 'checkout_action' active.",
+    "The application calculated an inverted subtotal, generating a systemic credit balance rather than a charge.",
+    "Bypassed vertical authorization checks by injecting a sibling resource UUID into the 'update_profile' call."
+  ],
+  "remediation_steps": "1. Immediately terminate active session cookie 'sess_99342_auth'. \n2. Apply a temporary hot-patch to the API gateway validation layer to reject negative integer values in quantity fields. \n3. Flag transaction reference ID 'TX-88321' for manual audit and immediate financial reversal.",
+  "summary": "An application-layer semantic business-logic exploit was detected. The client intentionally passed structured, non-malicious-looking data parameters (negative quantities) to exploit backend ledger arithmetic, resulting in an unauthorized system credit."
+}
+
+{
+  "category": "intelligence_summary",
+  "threat_detected": true,
+  "severity": "MEDIUM",
+  "confidence_score": 0.95,
+  "findings": [
+    "Extracted malicious IP infrastructure markers: 185.220.101.4 and 193.56.28.14.",
+    "Identified active exploitation phase utilizing known vulnerability CVE-2023-34362 (MOVEit Transfer SQL Injection).",
+    "Targeted assets identified: 'us-east-prod-file-server-01' and 'back-office-billing-db'.",
+    "Data signature indicates localized probing and staging; no confirmed massive exfiltration footprint found in the provided network stream block."
+  ],
+  "remediation_steps": "1. Feed extracted IPs (185.220.101.4, 193.56.28.14) into boundary firewalls for immediate blocking. \n2. Verify hot-patch compliance state for CVE-2023-34362 across all external-facing file transfer nodes. \n3. Initiate targeted endpoint telemetry review on 'us-east-prod-file-server-01' to check for persistence mechanisms.",
+  "summary": "Threat Intelligence Synthesis: The submitted raw forensic log outlines a targeted scanning and localized exploitation attempt hitting edge file-transfer servers. The attack matches signature workflows of known threat groups targeting data storage units via CVE-2023-34362. Immediate remediation focuses on ingress blacklisting and emergency patching verification."
+}
