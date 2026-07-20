@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  vllm-inference:
+    image: vllm/vllm-openai:latest
+    container_name: security-vllm
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - ~/.cache/huggingface:/root/.cache/huggingface
+    ports:
+      - "8000:8000"
+    ipc: host
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    command: >
+      --model meta-llama/Llama-3.1-8B-Instruct
+      --max-model-len 8192
+      --disable-log-requests
