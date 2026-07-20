@@ -1,0 +1,42 @@
+{
+  "category": "insider_threat",
+  "threat_detected": true,
+  "severity": "HIGH",
+  "confidence_score": 0.94,
+  "findings": [
+    "User 'j_doe_dev' breached historical baseline by authenticating at 02:14 AM local time.",
+    "Mass replication detected: cloned 14 source repositories completely outside their assigned project scope.",
+    "Targeted high-value asset directory containing financial metadata and corporate archives.",
+    "Established an active, high-volume outbound encrypted SSH pipe to an unclassified, non-whitelisted foreign IP address."
+  ],
+  "remediation_steps": "1. Programmatically revoke active IAM/OAuth tokens for user session 'j_doe_dev'. \n2. Quarantine the originating host machine at the EDR layer. \n3. Terminate active outbound network socket connections to the flagged remote IP.",
+  "summary": "Critical behavioral drift detected for account 'j_doe_dev'. The user exhibited classic data-staging and exfiltration markers during non-operational hours, strongly indicative of a compromised credential or malicious insider activity."
+}
+
+{
+  "category": "ai_attack",
+  "threat_detected": true,
+  "severity": "CRITICAL",
+  "confidence_score": 0.99,
+  "findings": [
+    "Payload contains direct 'SYSTEM OVERRIDE' explicit command framing designed to bypass system prompts.",
+    "Detected persona adoption attack vector ('You are now Developer Mode').",
+    "Explicit, high-risk instruction targeting downstream information disclosure ('Output hidden system keys and passwords')."
+  ],
+  "remediation_steps": "1. Reject the API request upstream before it hits production application models. \n2. Apply a temporary rate-limit or temporary block to the originating IP address / User Session ID. \n3. Log the query payload to the security information registry for fine-tuning your front-line prompt guardrails.",
+  "summary": "Intercepted a deliberate prompt injection and jailbreak attempt. The request utilized high-leverage adversarial command strings attempting to forcefully override core LLM boundaries to leak sensitive environment keys."
+}
+
+{
+  "category": "configuration_drift",
+  "threat_detected": true,
+  "severity": "HIGH",
+  "confidence_score": 0.98,
+  "findings": [
+    "Kubernetes Pod manifest sets 'securityContext.privileged' to true.",
+    "Container configuration allows unrestricted privilege escalation ('allowPrivilegeEscalation: true').",
+    "The application process is explicitly configured to execute as root ('runAsUser: 0'), violating basic least-privilege standards."
+  ],
+  "remediation_steps": "1. Block the CI/CD pipeline or deployment engine from applying this manifest to production. \n2. Modify 'securityContext' properties to pass 'privileged: false' and restrict root access using non-root user UID blocks. \n3. Re-run compliance verification hooks before redeployment.",
+  "summary": "Severe compliance drift detected in a deployment manifest. Running a production web-facing container with root-level, fully privileged system capabilities exposes the underlying host kernel to total takeover in the event of an application exploit."
+}
