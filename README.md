@@ -18,7 +18,7 @@ By leveraging a Large Language Model (LLM) enforcing strict JSON schema constrai
 
 ## Supported Threat Categories
 
-The engine evaluates 20+ non-ASA threat vectors across two primary domains, plus specialized satellite/WAN infrastructure alerts:
+The engine evaluates 25+ non-ASA threat vectors across two primary domains, plus specialized satellite/WAN infrastructure alerts:
 
 ### 1. Core Security & Behavioral Domain
 * **`insider_threat`** — Behavioral Drift & Mass Repository Staging
