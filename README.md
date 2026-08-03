@@ -43,13 +43,6 @@ The engine evaluates 25+ non-ASA threat vectors across two primary domains, plus
 * **`ai_key_harvesting`** — Inadvertent API Key & License Exposure in LLM Prompts
 * **`graphql_schema_harvesting`** — GraphQL Introspection Probing & Field-Suggestion Leaks
 * **`indirect_prompt_injection`** — RAG Vector Database Poisoning & Ingested File Attacks
-
-### 3. Satellite & WAN Perimeter Overlay (Starlink) {[**IN PROGRESS & MAYBE**]}
-* **`starlink_rf_jamming`** — RF Downlink Noise Spikes & LEO Beam Handoff Failures
-* **`starlink_grpc_exploitation`** — Unauthenticated Local gRPC Management API Probing (`192.168.100.1:9201`)
-* **`starlink_cgnat_bypassed`** — Anomalous Ground Station POP Shifts & OSPF Latency Anomalies
-* **`starlink_shadow_wan`** — Rogue Satellite Egress Bypassing Centralized ASA Perimeter Rules
-
 ---
 
 ## Data Pipeline Architecture
