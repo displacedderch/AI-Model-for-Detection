@@ -43,6 +43,12 @@ The engine evaluates 25+ non-ASA threat vectors across two primary domains, plus
 * **`ai_key_harvesting`** — Inadvertent API Key & License Exposure in LLM Prompts
 * **`graphql_schema_harvesting`** — GraphQL Introspection Probing & Field-Suggestion Leaks
 * **`indirect_prompt_injection`** — RAG Vector Database Poisoning & Ingested File Attacks
----
 
-## Data Pipeline Architecture
+### 3. Pipeline Trust-Chain Integrity
+* **`log_store_poisoning`** — indirect injection via crafted log entries in the ES store
+* **`es_scope_boundary_audit`** — config-state audit of the read-only zero-trust role, not runtime queries
+* **`log_time_correlation_integrity`** — cross-WAN-path timestamp skew (Starlink/optical/GSM)
+* **`ospf_trust_violation`** — routing-layer trust violations distinct from normal multi-WAN reconvergence
+* **`model_integrity_check`** — weight/provenance verification for the GPU4.0-hosted model
+* **`gpu_inference_isolation`** — resource isolation if anything else ever shares the GPU
+* **`reasoning_layer_exhaustion`** — volume-based DoS against the single reasoning layer
