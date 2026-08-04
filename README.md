@@ -13,7 +13,7 @@ By leveraging a Large Language Model (LLM) enforcing strict JSON schema constrai
 1. **Bridge the Visibility Gap:** Synthesize unstructured network layer logs (`%ASA-X-XXXXXX`) with structured application JSON events (OAuth, gRPC, API gateways, RAG vector pipelines) to detect cross-layer compromises.
 2. **Context Window Optimization:** Pre-parse, deduplicate, and normalize high-volume firewall telemetry into OCSF (Open Cybersecurity Schema Framework) standard formats before LLM inference to minimize token overhead and eliminate hallucinations.
 3. **Structured Alerting:** Generate standardized, machine-readable JSON security alerts containing threat summaries, granular forensic findings, confidence scores, and automated remediation steps for immediate downstream SOAR/SIEM ingestion.
-
+4. **Pipeline Trust & Chain Integrity Domain:** Ensures zero-trust protection across the entire AI pipeline by verifying Elasticsearch database boundaries, validating cryptographic model weights on GPU hardware, enforcing isolation, and preventing log poisoning or resource exhaustion attacks against the core reasoning engine.
 ---
 
 ## Supported Threat Categories
