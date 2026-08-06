@@ -20,35 +20,41 @@ The pipeline uses a Large Language Model (LLM) that follows strict JSON Schema r
 
 The engine evaluates 25+ non-ASA threat vectors across two primary domains, plus specialized satellite/WAN infrastructure alerts:
 
-### 1. Core Security & Behavioral Domain
-* **`insider_threat`** — Behavioral Drift & Mass Repository Staging
-* **`semantic_exploit`** — Application Logic & Negative Arithmetic Exploits
-* **`ai_attack`** — Direct Prompt Injection, System Overrides & Jailbreaks
-* **`configuration_drift`** — Kubernetes Manifest Privilege Escalation & Container Root Drift
+### Behavioral & Identity Threats
+* **`insider_theat`** — Behavioral Drift & Mass Repository Stagin
 * **`mfa_fatigue_push`** — MFA Prompt Bombing & Push Notification Exhaustion
-* **`mass_assignment_overposting`** — API Schema Over-Posting & Role Injection
 * **`low_slow_auth_spray`** — Distributed, Multi-Proxy Identity Credential Spraying
-* **`social_engineering_ingress`** — Business Email Compromise (BEC) & Executive Impersonation
-* **`business_logic_manipulation`** — Multi-Step Transactional & Currency State Fraud
-* **`shadow_ai_dlp`** — Dynamic Source Code Exfiltration to Public AI Services
+* **`social_engineering_ingress`** — BEC & Executive Impersonation
+* **`session_hijack_fixation`** — Impossible Travel & User-Agent Shifts
 
-### 2. Infrastructure, Identity & Network Domain
-* **`dns_tunneling_dga`** — Semantic Subdomain Entropy & High-Volume TXT Exfiltration
-* **`ad_persistence_forgery`** — Kerberos Golden Ticket Creation & Ticket Lifetime Forgery
+### Application & API Exploits
+* **`semantic_exploit`** — Application Logic & Negative Arithmetic Exploits
+* **`mass_assignment_overposting`** — API Schema Over-Posting & Role Injection
 * **`api_bola_idor`** — Broken Object Level Authorization & Cross-Tenant Access
+* **`business_logic_manipulation`** — Multi-Step Transactional & Currency State Fraud
+* **`graphql_schema_harvesting`** — GraphQL Introspection Probing & Field-Suggestion Leaks
+
+### Infrastructure & Configuration Drift
+* **`configuration_drift`** — Kubernetes Manifest Privilege Escalation & Container Root Drift
 * **`cicd_supply_chain`** — Pipeline Contamination & Build-Time Secret Dumping
 * **`secrets_leak_detection`** — Hardcoded Cloud Keys in Git Commits & Code Diffs
-* **`oauth_app_consent_grant`** — Illicit SaaS Third-Party App Consent & Scope Escalation
-* **`session_hijack_fixation`** — Concurrent Geographic Impossible Travel & User-Agent Shifts
-* **`ai_key_harvesting`** — Inadvertent API Key & License Exposure in LLM Prompts
-* **`graphql_schema_harvesting`** — GraphQL Introspection Probing & Field-Suggestion Leaks
-* **`indirect_prompt_injection`** — RAG Vector Database Poisoning & Ingested File Attacks
+* **`dns_tunneling_dga`** — Semantic Subdomain Entropy & High-Volume TXT Exfiltration
+* **`ospf_trust_violation`** — Routing-layer trust violations
 
-### 3. Pipeline Trust-Chain Integrity
-* **`log_store_poisoning`** — indirect injection via crafted log entries in the ES store
-* **`es_scope_boundary_audit`** — config-state audit of the read-only zero-trust role, not runtime queries
-* **`log_time_correlation_integrity`** — cross-WAN-path timestamp skew (Starlink/optical/GSM)
-* **`ospf_trust_violation`** — routing-layer trust violations distinct from normal multi-WAN reconvergence
-* **`model_integrity_check`** — weight/provenance verification for the GPU4.0-hosted model
-* **`gpu_inference_isolation`** — resource isolation if anything else ever shares the GPU
-* **`reasoning_layer_exhaustion`** — volume-based DoS against the single reasoning layer
+### Authentication, Authorization & Persistence
+* **`ad_persistence_forgery`** — Kerberos Golden Ticket Creation & Ticket Lifetime Forgery
+* **`oauth_app_consent_grant`** — Illicit SaaS App Consent & Scope Escalation
+
+### AI-Specific Security Threats
+* **`ai_attack`** — Prompt Injection, System Overrides & Jailbreaks
+* **`shadow_ai_dlp`** — Source Code Exfiltration to Public AI Services
+* **`ai_key_harvesting`** — API Key & License Exposure in LLM Prompts
+* **`indirect_prompt_injection`** — RAG Vector DB Poisoning & Ingested File Attacks
+* **`model_integrity_check`** — Weight/Provenance Verification for GPU-hosted Model
+* **`gpu_inference_isolation`** — Resource Isolation if Sharing GPU
+* **`reasoning_layer_exhaustion`** — Volume-based DoS Against Single Reasoning Layer
+
+### Observability, Logging & State Integrity
+* **`log_store_poisoning`** — Crafted log-entry injection into ES store
+* **`es_scope_boundary_audit`** — Config-state audit of read-only zero‑trust role
+* **`log_time_correlation_integrity`** — WAN-path timestamp skew (Starlink/optical/GSM)
