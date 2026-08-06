@@ -18,7 +18,7 @@ The pipeline uses a Large Language Model (LLM) that follows strict JSON Schema r
 
 ## Supported Threat Categories
 
-The engine evaluates 25+ non-ASA threat vectors across two primary domains, plus specialized satellite/WAN infrastructure alerts:
+The engine evaluates 27+ non-ASA threat vectors across two primary domains, plus specialized satellite/WAN infrastructure alerts:
 
 ### Behavioral & Identity Threats
 * **`insider_theat`** — Behavioral Drift & Mass Repository Stagin
