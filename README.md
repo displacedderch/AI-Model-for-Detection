@@ -1,4 +1,4 @@
-# Hybrid *pseudo* SIEM & LLM Security Alert Correlation Engine
+# Hybrid SIEM & LLM Security Alert Correlation Engine via LLM Operations
 
 ## Overview
 
