@@ -2,9 +2,9 @@
 
 ## Overview
 
-This repository provides the architecture and processing pipeline for an LLM-Augmented Security Operations Center (SOC) Alerting Engine. The script is built to ingest, normalize, and correlate two types of security log streams. It combines traditional Layer 3/4 perimeter firewall logs, like Cisco ASA Syslog, with modern Layer 7 application, identity, cloud control plane, and possibly satellite infrastructure (such as Starlink) telemetry.
+The repository contains the architecture and processing pipeline for an alerting engine that is augmented with the use of large language models. The script is designed to ingest, normalise, and correlate two kinds of security log streams; it combines traditional Layer 3/4 perimeter firewall logs, for example those from Cisco ASA Syslog, with modern Layer 7 application, identity, cloud control plane, and possibly also telemetry from satellite infrastructure such as Starlink.
 
-The pipeline uses a Large Language Model (LLM) that follows strict JSON Schema rules. This helps it find complex multi-step attacks, business logic exploits, and semantic threats that standard perimeter firewalls might miss.
+The pipeline is based on a Large Language Model (LLM) which adheres to strict JSON Schema rules, enabling it to identify complex multi-step attacks, business-logic exploits, and semantic threats that ordinary perimeter firewalls would probably fail to detect.
 
 ---
 
